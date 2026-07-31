@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Our Bucket List ✅</title>
+<meta name="description" content="Things we want to do together.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f3d9fa">
+
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="light">
+
+<div id="loader" aria-hidden="true">
+  <div class="loader-heart"></div>
+  <div class="loader-text">gathering our plans…</div>
+</div>
+
+<div class="floaters" id="floaters" aria-hidden="true"></div>
+<button type="button" class="chat-fab" id="chat-fab-btn" aria-label="Chat with Cupid">💘</button>
+
+<main class="page" id="page">
+
+  <div class="topbar">
+    <a href="index.html" class="icon-btn" aria-label="Back to countdown">←</a>
+    <div class="topbar-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Switch to dark mode">🌙</button>
+    </div>
+  </div>
+
+  <section class="glass-card">
+    <p class="eyebrow">Things To Do Together</p>
+    <h1 class="headline">Our Bucket List ✅</h1>
+    <div class="guestbook-banner hidden" id="bucket-setup-banner"></div>
+
+    <div class="progress-wrap">
+      <div class="progress-labels">
+        <span>Our progress</span>
+        <span id="bucket-progress-label">0/0 done</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="bucket-progress-fill"></div>
+      </div>
+    </div>
+
+    <form id="bucket-form" class="bucket-add-row">
+      <input type="text" id="bucket-input" placeholder="Add something we should do…" autocomplete="off">
+      <button type="submit" class="chat-send-btn">Add</button>
+    </form>
+    <p class="form-status" id="bucket-status" role="status" aria-live="polite"></p>
+
+    <div id="bucket-list"></div>
+  </section>
+
+  <div class="controls-row section-gap">
+    <a href="quiz.html" class="pill-btn secondary">Play a Little Quiz 💕</a>
+    <a href="guestbook.html" class="pill-btn secondary">Guestbook 💌</a>
+  </div>
+  <div class="controls-row" style="margin-top:12px;">
+    <a href="rosegarden.html" class="pill-btn secondary">Rose Garden 🌹</a>
+    <a href="heartcatch.html" class="pill-btn secondary">Heart Catch ❤️</a>
+  </div>
+  <div class="controls-row" style="margin-top:12px;">
+    <a href="wheel.html" class="pill-btn secondary">Wheel of Love 🎡</a>
+  </div>
+</main>
+
+<div class="modal-overlay" id="chat-overlay">
+  <div class="modal-card chat-modal-card">
+    <button class="icon-btn modal-close" id="chat-close" aria-label="Close">✕</button>
+    <h2 class="modal-title">Chat with <span id="chat-bot-name">Cupid</span> 💘</h2>
+    <div class="chat-window" id="chat-window"></div>
+    <form id="chat-form" class="chat-input-row">
+      <input type="text" id="chat-input" placeholder="Say something…" autocomplete="off">
+      <button type="submit" class="chat-send-btn" id="chat-send">Send</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/bucketlist.js"></script>
+</body>
+</html>

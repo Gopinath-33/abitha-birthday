@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>A Little Countdown For Abitha ❤️</title>
+<meta name="description" content="A private, romantic birthday countdown made just for Abitha — one new surprise every day until the big day.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f3d9fa">
+
+<!-- Open Graph -->
+<meta property="og:title" content="A Little Countdown For Abitha ❤️">
+<meta property="og:description" content="Counting down the days to something special.">
+<meta property="og:type" content="website">
+
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="light">
+
+<!-- Loading screen -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-heart"></div>
+  <div class="loader-text">just a moment…</div>
+</div>
+
+<!-- Unlock reveal — plays briefly each visit before today's content appears -->
+<div class="unlock-overlay" id="unlock-overlay" aria-hidden="true">
+  <span class="unlock-icon" id="unlock-icon">🔒</span>
+  <span class="unlock-caption">unlocking today…</span>
+</div>
+
+<!-- Ambient floating hearts / flowers / sparkles -->
+<div class="floaters" id="floaters" aria-hidden="true"></div>
+
+<button type="button" class="chat-fab" id="chat-fab-btn" aria-label="Chat with Cupid">💘</button>
+
+<!-- Hidden SVG defs (gradient reused by the medallion ring) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8749a"/>
+      <stop offset="55%" stop-color="#9b5de5"/>
+      <stop offset="100%" stop-color="#e8c878"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<main class="page" id="page">
+
+  <div class="topbar">
+    <span class="brand">for Abitha ✦</span>
+    <div class="topbar-actions">
+      <button class="icon-btn" id="music-toggle" aria-label="Play music">🔈</button>
+      <button class="icon-btn" id="theme-toggle" aria-label="Switch to dark mode">🌙</button>
+    </div>
+  </div>
+
+  <section class="glass-card">
+    <p class="eyebrow">Advance Birthday Countdown</p>
+    <div style="text-align:center;"><span class="streak-badge hidden" id="streak-badge"></span></div>
+    <h1 class="headline" id="headline">Advance Happy Birthday, My Dear Abitha ❤️</h1>
+
+    <div class="milestone-badge hidden" id="milestone-badge"></div>
+
+    <div class="medallion-wrap fade-swap-target">
+      <svg class="medallion-ring" width="240" height="240" viewBox="0 0 240 240">
+        <circle class="medallion-track" cx="120" cy="120" r="108"></circle>
+        <circle class="medallion-progress" id="medallion-progress-circle" cx="120" cy="120" r="108"></circle>
+      </svg>
+      <div class="medallion-inner">
+        <img class="medallion-img" id="medallion-img" src="" alt="" aria-hidden="true">
+        <span class="medallion-number tap-hint" id="day-number" data-secret-trigger role="button" tabindex="0" aria-label="Tap 7 times for a surprise">30</span>
+      </div>
+      <span class="medallion-label" id="day-label">Days To Go</span>
+    </div>
+
+    <p class="quote fade-swap-target" id="quote">Loading today's little note…</p>
+
+    <div class="day-image-frame fade-swap-target">
+      <img id="day-image" src="" alt="" loading="lazy">
+      <canvas id="scratch-canvas" aria-hidden="true"></canvas>
+      <div class="scratch-hint" id="scratch-hint">✨ Scratch to reveal ✨</div>
+    </div>
+
+    <div class="live-clock-wrap hidden" id="live-clock-wrap">
+      <div class="live-clock-label" id="live-clock-label">Next Surprise Unlocks In</div>
+      <div class="live-clock" id="live-clock">00:00:00</div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-labels">
+        <span id="progress-start-label">Aug 16</span>
+        <span id="progress-percent">0%</span>
+        <span>Birthday</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <div class="controls-row">
+      <button class="pill-btn" id="reply-open">Reply to Me ❤️</button>
+      <button class="pill-btn share-btn" id="share-whatsapp" aria-label="Share on WhatsApp">🟢 Share</button>
+    </div>
+    <div class="controls-row" style="margin-top:12px;">
+      <a href="quiz.html" class="pill-btn secondary">Play a Little Quiz 💕</a>
+      <a href="guestbook.html" class="pill-btn secondary">Guestbook 💌</a>
+    </div>
+    <div class="controls-row" style="margin-top:12px;">
+      <a href="bucketlist.html" class="pill-btn secondary">Our Bucket List ✅</a>
+    </div>
+    <div class="controls-row" style="margin-top:12px;">
+      <a href="rosegarden.html" class="pill-btn secondary">Rose Garden 🌹</a>
+      <a href="heartcatch.html" class="pill-btn secondary">Heart Catch ❤️</a>
+    </div>
+    <div class="controls-row" style="margin-top:12px;">
+      <a href="wheel.html" class="pill-btn secondary">Wheel of Love 🎡</a>
+    </div>
+  </section>
+
+  <p class="footnote">Made with love, one day at a time. New content unlocks automatically at midnight — no need to refresh early. ✦</p>
+  <p class="footnote">psst — tap the countdown number a few times. ✦</p>
+</main>
+
+<!-- Reply modal -->
+<div class="modal-overlay" id="reply-overlay">
+  <div class="modal-card">
+    <button class="icon-btn modal-close" id="reply-close" aria-label="Close">✕</button>
+    <h2 class="modal-title">Reply to Me</h2>
+    <p class="modal-sub">Say whatever's on your heart — it'll land straight in my inbox.</p>
+    <form id="reply-form" novalidate>
+      <div class="field">
+        <label for="reply-name">Your name</label>
+        <input type="text" id="reply-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="reply-message">Your message</label>
+        <textarea id="reply-message" name="message" rows="4" required></textarea>
+      </div>
+      <div class="modal-actions">
+        <button type="submit" class="pill-btn" id="reply-send">Send ❤️</button>
+      </div>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<!-- Secret easter egg modal -->
+<div class="modal-overlay secret-modal" id="secret-overlay">
+  <div class="modal-card">
+    <button class="icon-btn modal-close" id="secret-close" aria-label="Close">✕</button>
+    <div class="secret-emoji">🤫</div>
+    <p class="secret-text" id="secret-text"></p>
+  </div>
+</div>
+
+<!-- Background music (add your own royalty-free track at this path) -->
+<audio id="bg-audio" loop preload="none">
+  <source src="assets/audio/bg-music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script src="js/config.js"></script>
+<script src="js/countdown.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/reply.js"></script>
+
+<div class="modal-overlay" id="chat-overlay">
+  <div class="modal-card chat-modal-card">
+    <button class="icon-btn modal-close" id="chat-close" aria-label="Close">✕</button>
+    <h2 class="modal-title">Chat with <span id="chat-bot-name">Cupid</span> 💘</h2>
+    <div class="chat-window" id="chat-window"></div>
+    <form id="chat-form" class="chat-input-row">
+      <input type="text" id="chat-input" placeholder="Say something…" autocomplete="off">
+      <button type="submit" class="chat-send-btn" id="chat-send">Send</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Happy Birthday Abitha ❤️</title>
+<meta name="description" content="A celebration page, made with love, for Abitha's birthday.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2d1b3d">
+
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@600;700&family=Caveat:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="light">
+
+<div id="loader" aria-hidden="true">
+  <div class="loader-heart"></div>
+  <div class="loader-text">unwrapping your day…</div>
+</div>
+
+<div class="floaters" id="floaters" aria-hidden="true"></div>
+
+<button type="button" class="chat-fab" id="chat-fab-btn" aria-label="Chat with Cupid">💘</button>
+
+<canvas id="confetti-canvas" aria-hidden="true"></canvas>
+<canvas id="fireworks-canvas" aria-hidden="true"></canvas>
+
+<main class="page" id="page">
+
+  <div class="topbar">
+    <span class="brand">celebrating ✦</span>
+    <div class="topbar-actions">
+     
+      <button class="icon-btn" id="theme-toggle" aria-label="Switch to dark mode">🌙</button>
+    </div>
+  </div>
+
+  <section class="bday-hero">
+    <h1 class="bday-title" id="bday-title">Happy Birthday Abitha ❤️</h1>
+    <p class="bday-sub">today, the celebrating finally begins.</p>
+    <p class="relationship-stat hidden" id="relationship-stat"></p>
+  </section>
+
+  <div class="portal-wrap" id="portal-wrap">
+    <div class="portal-glow"></div>
+    <div class="portal" id="portal">
+      <img class="portal-photo" src="assets/images/abiii.jpg" alt="Abitha" loading="lazy">
+      <div class="portal-inner-glow"></div>
+      <div class="portal-door left"><span class="portal-handle"></span></div>
+      <div class="portal-door right"><span class="portal-handle"></span></div>
+    
+    </div>
+  </div>
+
+  <p class="cake-hint" id="cake-hint">🎁 tap the gate to open your surprise</p>
+
+  <div class="wish-panel hidden" id="wish-panel">
+    <button class="pill-btn secondary" id="wish-btn">✨ Make a Wish</button>
+    <p class="wish-count" id="wish-count"></p>
+  </div>
+
+  <section class="glass-card section-gap">
+    <h2 class="section-title">A Surprise For You 🎥</h2>
+    <div class="video-frame" id="video-frame">
+      <div class="video-poster" id="video-poster">
+        <span class="video-play-btn">▶</span>
+        <span class="video-poster-text">Tap to play</span>
+      </div>
+      <video id="surprise-video" playsinline preload="none" class="hidden">
+        <source src="assets/video/supabi.mp4" type="video/mp4">
+      </video>
+      <div class="video-missing hidden" id="video-missing">
+        No video added yet — drop a file at <code>assets/video/surprise.mp4</code>.
+      </div>
+    </div>
+    <p class="video-caption" id="video-caption"></p>
+  </section>
+
+  <section class="glass-card section-gap">
+    <h2 class="section-title">Pop a Balloon 🎈</h2>
+    <p class="balloon-hint">tap a balloon for a little surprise</p>
+    <div class="balloon-field" id="balloon-field"></div>
+  </section>
+
+  <section class="glass-card section-gap">
+    <h2 class="section-title">A Little Gift For You 🎁</h2>
+    <div class="gift-box-wrap" id="gift-box-wrap">
+      <div class="gift-box" id="gift-box">
+        <div class="gift-box-body"></div>
+        <div class="gift-ribbon-v"></div>
+        <div class="gift-lid"></div>
+      </div>
+      <p class="gift-hint" id="gift-hint">tap to unwrap 🎀</p>
+    </div>
+    <div class="gift-reveal hidden" id="gift-reveal">
+      <div class="gift-reveal-emoji">🎁</div>
+      <div class="gift-reveal-title" id="gift-reveal-title"></div>
+      <p class="gift-reveal-text" id="gift-reveal-text"></p>
+    </div>
+  </section>
+
+  <section class="glass-card section-gap">
+    <h2 class="section-title">Just For Fun: Our Signs ✨</h2>
+    <div class="zodiac-row">
+      <div class="zodiac-card">
+        <span class="zodiac-emoji" id="zodiac-you-emoji"></span>
+        <div class="zodiac-name" id="zodiac-you-name"></div>
+      </div>
+      <span class="zodiac-heart">💕</span>
+      <div class="zodiac-card">
+        <span class="zodiac-emoji" id="zodiac-her-emoji"></span>
+        <div class="zodiac-name" id="zodiac-her-name"></div>
+      </div>
+    </div>
+    <p class="zodiac-blurb" id="zodiac-blurb"></p>
+    <div class="zodiac-bars" id="zodiac-bars"></div>
+  </section>
+<section class="glass-card">
+  <h2 class="section-title">A Little Letter For You</h2>
+  <div class="handwritten-wrap" id="handwritten-wrap">
+    <svg class="pen-icon" id="pen-icon" viewBox="0 0 24 24">
+      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+    </svg>
+    <p class="love-letter handwritten" id="love-letter"></p>
+    <span class="signoff handwritten-signoff" id="love-signoff"></span>
+  </div>
+</section>
+
+  <section class="glass-card section-gap">
+    <h2 class="section-title">Photo Gallery</h2>
+    <div class="gallery-grid" id="gallery-grid">
+      <img src="assets/images/2.jpg" alt="Memory 1" loading="lazy">
+      <img src="assets/images/3.jpg" alt="Memory 2" loading="lazy">
+      <img src="assets/images/4.jpg" alt="Memory 3" loading="lazy">
+      <img src="assets/images/5.jpg" alt="Memory 4" loading="lazy">
+      <img src="assets/images/6.jpg" alt="Memory 5" loading="lazy">
+      <img src="assets/images/7.jpg" alt="Memory 6" loading="lazy">
+    </div>
+  </section>
+
+  <section class="glass-card section-gap">
+  <h2 class="section-title">Watch This Bloom As You Read 🌸</h2>
+  <div class="flower-scroll-wrap">
+    <svg class="flower-svg" id="flower-svg" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
+      <line class="flower-stem" x1="100" y1="250" x2="100" y2="140" />
+      <path class="flower-leaf left" d="M100,210 C70,205 55,185 60,165 C85,170 100,185 100,210 Z" />
+      <path class="flower-leaf right" d="M100,190 C130,185 145,165 140,145 C115,150 100,165 100,190 Z" />
+      <g class="flower-head" transform="translate(100,120)">
+        <ellipse class="petal" transform="rotate(0)"   cx="0" cy="-30" rx="16" ry="30" />
+        <ellipse class="petal" transform="rotate(60)"  cx="0" cy="-30" rx="16" ry="30" />
+        <ellipse class="petal" transform="rotate(120)" cx="0" cy="-30" rx="16" ry="30" />
+        <ellipse class="petal" transform="rotate(180)" cx="0" cy="-30" rx="16" ry="30" />
+        <ellipse class="petal" transform="rotate(240)" cx="0" cy="-30" rx="16" ry="30" />
+        <ellipse class="petal" transform="rotate(300)" cx="0" cy="-30" rx="16" ry="30" />
+        <circle class="flower-center" r="12" />
+      </g>
+    </svg>
+    <p class="flower-caption" id="flower-caption">Keep scrolling…</p>
+  </div>
+</section>
+
+  <section class="glass-card section-gap">
+    <h2 class="section-title">Our Memories</h2>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <div class="controls-row section-gap">
+    <button class="pill-btn" id="reply-open">Reply to Me ❤️</button>
+    <button class="pill-btn share-btn" id="share-whatsapp" aria-label="Share on WhatsApp">🟢 Share</button>
+  </div>
+  <div class="controls-row" style="margin-top:12px;">
+    <a href="quiz.html" class="pill-btn secondary">Play a Little Quiz 💕</a>
+    <a href="guestbook.html" class="pill-btn secondary">Guestbook 💌</a>
+  </div>
+  <div class="controls-row" style="margin-top:12px;">
+    <a href="bucketlist.html" class="pill-btn secondary">Our Bucket List ✅</a>
+  </div>
+  <div class="controls-row" style="margin-top:12px;">
+    <a href="rosegarden.html" class="pill-btn secondary">Rose Garden 🌹</a>
+    <a href="heartcatch.html" class="pill-btn secondary">Heart Catch ❤️</a>
+  </div>
+  <div class="controls-row" style="margin-top:12px;">
+    <a href="wheel.html" class="pill-btn secondary">Wheel of Love 🎡</a>
+  </div>
+
+  <p class="final-message" id="final-message"></p>
+<section class="glass-card section-gap" style="text-align:center;">
+  <h2 class="section-title">See You Next Year 🎂</h2>
+  <p class="next-year-line" id="next-year-line">365 days until I get to do this all over again ❤️</p>
+  <div class="live-clock-wrap" id="next-year-clock-wrap">
+    <div class="live-clock-label">Counting Down Already</div>
+    <div class="live-clock" id="next-year-clock">00:00:00</div>
+  </div>
+</section>
+  <p class="footnote">Made with love, one day at a time. ✦</p>
+</main>
+
+<div class="modal-overlay" id="reply-overlay">
+  <div class="modal-card">
+    <button class="icon-btn modal-close" id="reply-close" aria-label="Close">✕</button>
+    <h2 class="modal-title">Reply to Me</h2>
+    <p class="modal-sub">Say whatever's on your heart — it'll land straight in my inbox.</p>
+    <form id="reply-form" novalidate>
+      <div class="field">
+        <label for="reply-name">Your name</label>
+        <input type="text" id="reply-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="reply-message">Your message</label>
+        <textarea id="reply-message" name="message" rows="4" required></textarea>
+      </div>
+      <div class="modal-actions">
+        <button type="submit" class="pill-btn" id="reply-send">Send ❤️</button>
+      </div>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<audio id="bg-audio" loop preload="none">
+  <source src="assets/audio/birthday-music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script src="js/config.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/reply.js"></script>
+<script src="js/birthday.js"></script>
+
+<div class="modal-overlay" id="chat-overlay">
+  <div class="modal-card chat-modal-card">
+    <button class="icon-btn modal-close" id="chat-close" aria-label="Close">✕</button>
+    <h2 class="modal-title">Chat with <span id="chat-bot-name">Cupid</span> 💘</h2>
+    <div class="chat-window" id="chat-window"></div>
+    <form id="chat-form" class="chat-input-row">
+      <input type="text" id="chat-input" placeholder="Say something…" autocomplete="off">
+      <button type="submit" class="chat-send-btn" id="chat-send">Send</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

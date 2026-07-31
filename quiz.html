@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>A Little Quiz For Us ❤️</title>
+<meta name="description" content="A playful little love quiz — every answer leads somewhere sweet.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f3d9fa">
+
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="light">
+
+<div id="loader" aria-hidden="true">
+  <div class="loader-heart"></div>
+  <div class="loader-text">shuffling questions…</div>
+</div>
+
+<div class="floaters" id="floaters" aria-hidden="true"></div>
+
+<button type="button" class="chat-fab" id="chat-fab-btn" aria-label="Chat with Cupid">💘</button>
+
+<main class="page" id="page">
+
+  <div class="topbar">
+    <a href="index.html" class="icon-btn" aria-label="Back to countdown">←</a>
+    <div class="topbar-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Switch to dark mode">🌙</button>
+    </div>
+  </div>
+
+  <section class="glass-card" id="quiz-card">
+    <p class="eyebrow">A Little Quiz For Us</p>
+    <div class="quiz-progress-dots" id="quiz-dots"></div>
+    <p class="quiz-question" id="quiz-question"></p>
+    <div class="quiz-options" id="quiz-options"></div>
+  </section>
+
+  <section class="glass-card quiz-result hidden" id="quiz-result">
+    <div class="quiz-result-emoji">💗</div>
+    <h2 class="quiz-result-title">The Real Answer</h2>
+    <p class="quiz-result-text" id="quiz-result-text"></p>
+    <div class="controls-row">
+      <button class="pill-btn secondary" id="quiz-restart">Play Again</button>
+      <a href="index.html" class="pill-btn">Back to Countdown</a>
+    </div>
+    <div class="controls-row" style="margin-top:12px;">
+      <a href="guestbook.html" class="pill-btn secondary">Guestbook 💌</a>
+      <a href="bucketlist.html" class="pill-btn secondary">Our Bucket List ✅</a>
+    </div>
+    <div class="controls-row" style="margin-top:12px;">
+      <a href="rosegarden.html" class="pill-btn secondary">Rose Garden 🌹</a>
+      <a href="heartcatch.html" class="pill-btn secondary">Heart Catch ❤️</a>
+    </div>
+    <div class="controls-row" style="margin-top:12px;">
+      <a href="wheel.html" class="pill-btn secondary">Wheel of Love 🎡</a>
+    </div>
+  </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/quiz.js"></script>
+
+<div class="modal-overlay" id="chat-overlay">
+  <div class="modal-card chat-modal-card">
+    <button class="icon-btn modal-close" id="chat-close" aria-label="Close">✕</button>
+    <h2 class="modal-title">Chat with <span id="chat-bot-name">Cupid</span> 💘</h2>
+    <div class="chat-window" id="chat-window"></div>
+    <form id="chat-form" class="chat-input-row">
+      <input type="text" id="chat-input" placeholder="Say something…" autocomplete="off">
+      <button type="submit" class="chat-send-btn" id="chat-send">Send</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
