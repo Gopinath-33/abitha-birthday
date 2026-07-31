@@ -497,11 +497,11 @@
     /*if (!isBirthdayYet()) {
       window.location.href = "index.html";
       return;
-    }*/
+    }
    if (!isBirthdayYet()) {
       window.location.href = "index.html";
       return;
-    }
+    }*/
     populate();
     startConfetti();
     startFireworks();
