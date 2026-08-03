@@ -21,7 +21,7 @@
   }
 
   function populate() {
-    document.getElementById("bday-title").textContent = `Happy Birthday ${CONFIG.herName} ❤️`;
+    document.getElementById("bday-title").textContent = `Happy Birthday ${CONFIG.herName} ❤️‍🩹`;
     document.getElementById("love-signoff").textContent = CONFIG.loveLetterSignoff;
     document.getElementById("final-message").textContent = CONFIG.finalSurprise;
 
@@ -241,38 +241,11 @@
     }
   }
 
-  /* ---------- Surprise video ---------- */
+  /* ---------- Surprise video (Google Drive iframe embed) ---------- */
   function setupSurpriseVideo() {
-    const video = document.getElementById("surprise-video");
-    const poster = document.getElementById("video-poster");
-    const missing = document.getElementById("video-missing");
     const captionEl = document.getElementById("video-caption");
-    if (!video) return;
-
     const cfg = CONFIG.surpriseVideo || {};
     if (captionEl) captionEl.textContent = cfg.caption || "";
-
-    video.addEventListener("error", showMissing);
-    const source = video.querySelector("source");
-    if (source) source.addEventListener("error", showMissing);
-
-    if (poster) {
-      poster.addEventListener("click", () => {
-        poster.classList.add("hidden");
-        video.classList.remove("hidden");
-        video.setAttribute("controls", "");
-        video.play().catch(() => {
-          // Autoplay might be blocked — controls are already visible so
-          // she can just press play herself.
-        });
-      });
-    }
-
-    function showMissing() {
-      video.classList.add("hidden");
-      if (poster) poster.classList.add("hidden");
-      if (missing) missing.classList.remove("hidden");
-    }
   }
 
   /* ---------- Gentle scroll-reveal for section cards ---------- */
@@ -497,14 +470,13 @@
     /*if (!isBirthdayYet()) {
       window.location.href = "index.html";
       return;
-    }
+    }*/
    if (!isBirthdayYet()) {
       window.location.href = "index.html";
       return;
-    }*/
+    }
     populate();
     startConfetti();
     startFireworks();
   });
 })();
-

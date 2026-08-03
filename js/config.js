@@ -9,11 +9,11 @@ const CONFIG = {
 
   // ---- Campaign dates (year is separate so this works for any year) ----
   year: 2026,          // change this if you reuse the site next year
-  startMonth: 8,        // August  → countdown begins (Day 42)
+  startMonth: 8,        // August  → countdown begins (Day 43)
   startDay: 4,
   birthdayMonth: 9,      // September → celebration page
   birthdayDay: 16,
-  totalDays: 42,         // Aug 4 (42) counting down to Sep 15 (0), Sep 16 = birthday
+  totalDays: 43,         // Aug 4 (43) counting down to Sep 15 (1), Sep 16 = birthday
 
   // ---- EmailJS (never hardcode real keys in a public repo — use env/config
   //      injection at deploy time, or a server-side proxy, if this ever goes
@@ -109,7 +109,7 @@ loveLetterSignoff: "Forever Yours, Gopinath ❤️",
     },
     {
       date: "Our Love Story",
-      text: "On March 19, 2016, our friendship became love. From that day, every moment with you became my favorite memory."
+      text: "On March 20, 2016, our friendship became love. From that day, every moment with you became my favorite memory."
     },
     {
       date: "Forever Together",
@@ -243,18 +243,67 @@ loveLetterSignoff: "Forever Yours, Gopinath ❤️",
     surpriseMessage: "Every heart you just caught is a little piece of how much I adore you. Happy almost-birthday. 🎉"
   },
 
-  // ---- Wheel of Love — spin to land on a surprise ----
+  // ---- Wheel of Love — spin to land on a surprise.
+  //      Each entry is { label, dare }. dare:true segments are little
+  //      tasks for her to do right now instead of a reward.
+  //      Only ONE spin is allowed per day; a 7-day streak unlocks a
+  //      bonus message (see wheelStreakUnlockMessage below). ----
   wheelOptions: [
-    "Free Hug 🤗",
-    "Chocolate 🍫",
-    "Date 🌸",
-    "Movie 🎬",
-    "Surprise Gift 🎁"
+    { label: "Free Hug 🤗", dare: false },
+    { label: "Chocolate 🍫", dare: false },
+    { label: "Date 🌸", dare: false },
+    { label: "Movie 🎬", dare: false },
+    { label: "Surprise Gift 🎁", dare: false },
+    { label: "Call me right now 📞", dare: true },
+    { label: "Send me a selfie 🤳", dare: true },
+    { label: "Send me a voice note 🎙️", dare: true },
+    { label: "Text me 3 reasons you love me 💌", dare: true }
   ],
+
+  // ---- Wheel streak system ----
+  wheelStreakUnlockMessage: "7 days in a row! 🔥 You're officially the most consistent spinner in love-wheel history. Here's your bonus: I owe you a full surprise date, your pick. 💕",
 
   // ---- Surprise video (birthday page) — add your video file at
   //      assets/video/surprise.mp4 (see the README there). ----
   surpriseVideo: {
     caption: "A little something I recorded just for you. 🎥"
+  },
+
+  // ---- Secret page (secret.html) — password-gated, unlocks a deeper
+  //      letter, a future vision, and a special photo/video.
+  //      CHANGE "ourword" to your real inside-joke word before sharing! ----
+  secretPage: {
+    password: "0416", // case-insensitive, spaces trimmed — CHANGE THIS
+    hint: "", // optional — e.g. "the name of our first movie" — leave blank for no hint
+
+    deepLetter: `There are things I've never said out loud, so I'm writing them here instead.
+
+You are the safest place I have ever known. Not because everything is perfect between us, but because even on the hardest days, choosing you has never once felt like a doubt.
+
+I don't just love who you are — I love who I become when I'm with you. Softer. Braver. More myself than I am anywhere else.
+
+This is the part of me I don't show easily. Thank you for being someone I trust enough to show it to.`,
+
+    futureVision: `Five years from now, I hope we're still doing something as small as this — finding new ways to remind each other we're chosen, every single day.
+
+Ten years from now, I hope our story has more chapters than either of us can count — a home that feels like us, mornings that still feel exciting, and a love that only got steadier with time.
+
+Whatever the future holds, I want to build it with you. Not a perfect life — just an honest one, together.`,
+
+    // Point this at a photo or video in your assets folder, e.g.
+    // "assets/images/secret-photo.jpg" or "assets/video/secret-video.mp4"
+    mediaSrc: "assets/images/secret-photo.jpg",
+    mediaType: "image", // "image" or "video"
+    mediaCaption: "This one's just for you.",
+
+    // Voice message on secret.html — add your audio file at
+    // assets/audio/secret-voice.mp3
+    audioCaption: "One more thing, just between us."
+  },
+
+  // ---- Surprise voice message (birthday page, right below the video) —
+  //      add your audio file at assets/audio/surprise-voice.mp3 ----
+  surpriseAudio: {
+    caption: "Press play — I recorded this just for you. 🎙️"
   }
 };

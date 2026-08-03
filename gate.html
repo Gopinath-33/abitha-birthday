@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Something's Coming ✦</title>
+<meta name="description" content="A little something is about to unlock.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f3d9fa">
+
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+  .gate-wrap { justify-content: center; }
+  .gate-card { text-align: center; padding: 48px 26px; }
+  .gate-icon { font-size: 3rem; margin-bottom: 16px; display: block; }
+  .gate-title {
+    font-family: var(--font-script);
+    font-size: 1.8rem;
+    color: var(--orchid-deep);
+    margin-bottom: 8px;
+  }
+  [data-theme="dark"] .gate-title { color: var(--gold-soft); }
+  .gate-sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin-bottom: 24px;
+  }
+  .gate-teaser {
+    font-family: var(--font-script);
+    font-size: 1.15rem;
+    color: var(--rose);
+    margin: 20px 0 16px;
+    min-height: 1.6em;
+    transition: opacity 0.5s var(--ease);
+  }
+  #gate-progress-wrap {
+    margin-top: 6px;
+    margin-bottom: 0;
+  }
+</style>
+</head>
+<body data-theme="dark">
+
+<div class="floaters" id="floaters" aria-hidden="true"></div>
+
+<main class="page gate-wrap" id="page">
+
+  <section class="glass-card gate-card">
+    <span class="gate-icon" id="gate-icon">🔒</span>
+    <h1 class="gate-title" id="gate-title">Something's Coming</h1>
+    <p class="gate-sub" id="gate-sub">This unlocks the moment the clock strikes 12:00 AM.</p>
+
+    <div class="live-clock-wrap" id="gate-clock-wrap">
+      <div class="live-clock-label">Unlocking In</div>
+      <div class="live-clock" id="gate-clock">00:00:00</div>
+    </div>
+
+    <p class="gate-teaser" id="gate-teaser"></p>
+
+    <div class="progress-wrap" id="gate-progress-wrap">
+      <div class="progress-labels">
+        <span>Waiting</span>
+        <span id="gate-progress-percent">0%</span>
+        <span>Unlock</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="gate-progress-fill"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/gate.js"></script>
+</body>
+</html>

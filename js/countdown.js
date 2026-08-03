@@ -42,7 +42,7 @@
     if (today >= bday) {
       return { phase: "birthday" };
     }
-    // On the start date elapsed = 0 -> Day 30. Each day after subtracts 1.
+    // On the start date elapsed = 0 -> Day totalDays. Each day after subtracts 1.
     const dayNumber = CONFIG.totalDays - elapsed;
     return { phase: "counting", dayNumber: Math.max(0, Math.min(CONFIG.totalDays, dayNumber)) };
   }
@@ -168,13 +168,26 @@
   }
 
   function init() {
+    const preview = getPreviewOverride();
+
+    // Guard: if someone opens index.html directly (bookmark, shared link,
+    // browser history) before the exact unlock moment, bounce to gate.html
+    // instead of showing the "before start" state here. Preview mode skips
+    // this so testing with ?preview=N still works.
+    if (!preview) {
+      const target = new Date(CONFIG.year, CONFIG.startMonth - 1, CONFIG.startDay, 0, 0, 0, 0);
+      if (new Date() < target) {
+        window.location.href = "gate.html";
+        return;
+      }
+    }
+
     const startLabelEl = document.getElementById("progress-start-label");
     if (startLabelEl) {
       const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
       startLabelEl.textContent = `${monthNames[CONFIG.startMonth - 1]} ${CONFIG.startDay}`;
     }
 
-    const preview = getPreviewOverride();
     const state = preview ? { phase: "counting", dayNumber: preview } : computeState();
 
     if (state.phase === "birthday") {
